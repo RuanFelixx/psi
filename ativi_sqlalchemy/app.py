@@ -22,5 +22,4 @@ def register():
         connection.execute(insert, {'nome': nome})
         connection.commit()
         return render_template('register.html')
-    else:
-       return render_template('index.html')
+    return render_template('register.html') 
