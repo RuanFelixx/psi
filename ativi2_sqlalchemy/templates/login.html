@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loguinho</title>
+</head>
+<body>
+    <form action="{{url_for('login')}}" method="post">
+        <input type="text" name="nome" placeholder="nome">
+        <input type="submit">
+    </form>
+    <a href="{{url_for('cadastrar_livro')}}">cadastre o seu livro</a>
+</body>
+</html>
