@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Locação</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{url_for('index')}}">Home</a>
+      
+    </nav>
+    <div class="container">
+        <h1>Cadastro de Locação</h1>
+        <form method="POST">
+            <label for="cliente_id">Cliente:</label>
+            <select name="cliente_id" id="cliente_id" required>
+                {% for cliente in clientes %}
+                    <option value="{{ cliente.id }}">{{ cliente.nome }}</option>
+                {% endfor %}
+            </select><br>
+            
+            <label for="veiculo_id">Veículo:</label>
+            <select name="veiculo_id" id="veiculo_id" required>
+                {% for veiculo in veiculos %}
+                    <option value="{{ veiculo.id }}">{{ veiculo.modelo }}</option>
+                {% endfor %}
+            </select><br>
+            
+            <label for="data_inicio">Data Início:</label>
+            <input type="date" name="data_inicio" id="data_inicio" required><br>
+            
+            <label for="data_fim">Data Fim:</label>
+            <input type="date" name="data_fim" id="data_fim" required><br>
+            
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+</body>
+</html>

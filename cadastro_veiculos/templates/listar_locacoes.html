@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Locações</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{url_for('index')}}">Home</a>
+    <div class="container">
+        <h1>Listagem de Locações</h1>
+        <ul>
+            {% for locacao in locacoes %}
+                <li>{{ locacao.cliente.nome }} alugou {{ locacao.veiculo.modelo }} de {{ locacao.data_inicio }} até {{ locacao.data_fim }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

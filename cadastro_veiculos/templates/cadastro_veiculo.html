@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Veiculo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{url_for('index')}}">Home</a>
+    </nav>
+    <form method="POST">
+        Modelo: <input type="text" name="modelo" required><br>
+        Placa: <input type="text" name="placa" required><br>
+        <input type="submit" value="Cadastrar">
+    </form>
+    
+</body>
+</html>

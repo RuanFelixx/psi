@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pagina inicial</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{url_for('cadastro_cliente')}}">cadastro do cliente</a>
+        <a href="{{url_for('cadastro_locacao')}}">cadastro do veiculo</a>
+        <a href="{{url_for('cadastro_veiculo')}}">cadastro da locação</a>
+        <a href="{{url_for('listar_clientes')}}">Listar clientes</a>
+        <a href="{{url_for('listar_veiculos')}}">listar veiculos</a>
+        <a href="{{url_for('listar_locacoes')}}">Listar locações</a>
+    </nav>
+</body>
+</html>
