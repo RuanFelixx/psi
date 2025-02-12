@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercícios</title>
+</head>
+<body>
+    <h2>Exercícios Cadastrados</h2>
+    {% if current_user.is_authenticated %}
+        <a href="{{ url_for('add_exercicio') }}">Cadastrar Novo Exercício</a><br><br>
+    {% endif %}
+    <ul>
+        {% for exercicio in exercicios %}
+            <li>{{ exercicio.nome }} - {{ exercicio.descricao }}</li>
+        {% endfor %}
+    </ul>
+       
+    <a href="{{ url_for('logout') }}">Logout</a>
+
+</body>
+</html>
