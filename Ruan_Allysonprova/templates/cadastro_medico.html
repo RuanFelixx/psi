@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Médico</title>
+</head>
+<body>
+    <h1>Cadastrar Médico</h1>
+    <form action="{{url_for('cadastro_medico')}}" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="crm">CRM:</label>
+        <input type="text" id="crm" name="crm" required><br><br>
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" required><br><br>
+
+        <button type="submit">Cadastrar Médico</button>
+    </form>
+</body>
+</html>

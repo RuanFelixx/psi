@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Nascimento de Bebê</title>
+</head>
+<body>
+    <form action="{{url_for('registro_nascimento')}}" method="POST">
+        <label for="nome_bebe">Nome do Bebê:</label>
+        <input type="text" id="nome_bebe" name="nome_bebe" required><br><br>
+    
+        <label for="data_nascimento">Data de Nascimento:</label>
+        <input type="date" id="data_nascimento" name="data_nascimento" required><br><br>
+    
+        <label for="peso">Peso:</label>
+        <input type="text" id="peso" name="peso" required><br><br>
+    
+        <label for="altura">Altura:</label>
+        <input type="text" id="altura" name="altura" required><br><br>
+    
+        <label for="mae_id">Mãe:</label>
+        <select id="mae_id" name="mae_id" required>
+            {% for mae in maes %}
+                <option value="{{ mae.id }}">{{ mae.nome }}</option>
+            {% endfor %}
+        </select><br><br>
+    
+        <label for="data_parto">Data do Parto:</label>
+        <input type="date" id="data_parto" name="data_parto" required><br><br>
+    
+        <label for="medicos">Médicos:</label>
+        <select id="medicos" name="medicos" required>
+            <option value="">Selecione um médico</option>
+            {% for medico in medicos %}
+                <option value="{{ medico.id }}">{{ medico.nome }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+    
+        <button type="submit">Registrar Nascimento</button>
+    </form>
+    
+</body>
+</html>
