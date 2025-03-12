@@ -1,0 +1,24 @@
+<!-- list_produtos.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos</title>
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+    <ul>
+        {% for produto in produtos %}
+            <li>
+                <strong>{{ produto.nome }}</strong><br>
+                {{ produto.descricao }}<br>
+                Preço: R${{ produto.preco }}<br>
+                <a href="{{ url_for('delete_produto', id=produto.id) }}" onclick="return confirm('Tem certeza que deseja excluir este produto?')">Excluir</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{{ url_for('add_produto') }}">Adicionar Produto</a>
+</body>
+</html>

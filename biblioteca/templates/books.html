@@ -7,12 +7,17 @@
 </head>
 <body>
     <h1>Lista de Livros</h1>
+    <a href="{{ url_for('add_book') }}">Adicionar Novo Livro</a>
     <ul>
         {% for book in books %}
             <li>
-                <strong>{{ book.title }}</strong><br>
-                <em>{{ book.author }}</em><br>
+                <p><strong>Título:</strong> {{ book.title }}</p>
+                <p><strong>Autor:</strong> {{ book.author }}</p>
+                <a href="{{ url_for('delete_book', book_id=book.id) }}" onclick="return confirm('Você tem certeza que deseja excluir este livro?')">Excluir</a>
+            </li>
+            
         {% endfor %}
+        
     </ul>
 </body>
 </html>

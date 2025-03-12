@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar exercicio</title>
+</head>
+<body>
+    <h1>Adicionar Novo exercicio</h1>
+    <form action="{{ url_for('add_exercicio') }}" method="POST">
+        <label for="exercicio">Nome do exercicio:</label>
+        <input type="text" id="exercicio" name="exercicio" required><br><br>
+        
+        <button type="submit">Adicionar exercicio</button>
+    </form>
+    <br>
+    <a href="{{ url_for('index') }}">Voltar à página inicial</a>
+</body>
+</html>

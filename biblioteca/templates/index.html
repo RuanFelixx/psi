@@ -6,9 +6,17 @@
     <title>Página Inicial</title>
 </head>
 <body>
-    <h1>Bem-vindo ao Sistema de Biblioteca</h1>
+    <h1>Bem-vindo ao Sistema de Biblioteca, Produtos e Exercicios</h1>
     <a href="{{ url_for('add_book') }}">Adicionar Livro</a> | 
     <a href="{{ url_for('list_books') }}">Ver Livros</a>
+    <br>
+    <a href="{{ url_for('add_exercicio') }}">Adicionar exercicio</a>|
+    <a href="{{ url_for('list_exercicios') }}">Ver exercicios</a>
+    <br>
+   
+    <a href="{{ url_for('add_produto') }}">Adicionar Produto</a>|
+    <a href="{{ url_for('list_produtos') }}">Ver Produtos</a>
+    
     <br>
     <a href="{{ url_for('logout') }}">Sair</a>
 </body>

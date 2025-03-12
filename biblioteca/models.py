@@ -23,12 +23,6 @@ class User(db.Model, UserMixin):  # Herança de UserMixin para usar funcionalida
     def check_password(self, password):
         return check_password_hash(self.password, password)
     
-    def get_id(self):
-        return str(self.id)  # Retorna o ID do usuário como string (necessário para o Flask-Login)
-
-    def is_active(self):
-        return self.is_active  # Aqui retorna o valor de 'is_active'
-
 
 class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -37,3 +31,20 @@ class Book(db.Model):
 
     def __repr__(self):
         return f"Book('{self.title}', '{self.author}')"
+
+
+
+class Exercicio(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    nome = db.Column(db.String(100), nullable=False)
+
+   
+
+class Produto(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    nome = db.Column(db.String(100), nullable=False)
+    descricao = db.Column(db.String(200), nullable=False)
+    preco = db.Column(db.Float, nullable=False)
+
+    def __repr__(self):
+        return f'<Produto {self.nome}>'

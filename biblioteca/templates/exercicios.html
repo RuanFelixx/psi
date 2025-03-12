@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de exercicios</title>
+</head>
+<body>
+    <h1>Lista de exercicios</h1>
+    <ul>
+        {% for exercicio in exercicios %}
+            <li>
+                <strong>{{ exercicio.nome }}</strong><br>
+                <!-- Link para excluir o exercício -->
+                <a href="{{ url_for('delete_exercicio', id=exercicio.id) }}" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
+            </li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>
